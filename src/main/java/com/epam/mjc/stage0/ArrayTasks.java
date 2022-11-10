@@ -1,5 +1,6 @@
 package com.epam.mjc.stage0;
 
+
 /**
  * Here are the tasks for working with the arrays.
  * <p>
@@ -11,7 +12,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-
+        return new String[]{"winter", "spring", "summer", "autumn"};
     }
 
     /**
@@ -25,7 +26,13 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-
+        int[] ints = new int[length];
+        int count = 1;
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = count;
+            count++;
+        }
+        return ints;
     }
 
     /**
@@ -37,7 +44,11 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        return sum;
     }
 
     /**
@@ -50,7 +61,14 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     /**
@@ -63,7 +81,19 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
+        String[] reversedArray = new String[arr.length];
+        int count = arr.length - 1;
+        for (int i = 0; i < reversedArray.length; i++) {
+            reversedArray[i] = arr[count];
+            count--;
+        }
+        return reversedArray;
+    }
 
+    public static void main(String[] args) {
+        ArrayTasks arrayTasks = new ArrayTasks();
+        String[] arr = {"pineapple", "apple", "pen"};
+        arrayTasks.reverseArray(arr);
     }
 
     /**
@@ -78,8 +108,21 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-
+        int count = 0;
+        for (int a : arr) {
+            if (a > 0) count++;
+        }
+        int[] arr2 = new int[count];
+        int position = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                arr2[position] = arr[i];
+                position++;
+            }
+        }
+        return arr2;
     }
+
 
     /**
      * Return a sorted, ragged, two-dimensional int[][] array following these rules:
@@ -93,5 +136,6 @@ public class ArrayTasks {
      */
     public int[][] sortRaggedArray(int[][] arr) {
 
+        return null;
     }
 }
