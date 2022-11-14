@@ -167,7 +167,7 @@ public class ArrayTasks {
                 }
             }
         }
-
-        return arr;
+        int[][] newArr = arr;
+        return newArr;
     }
 }
